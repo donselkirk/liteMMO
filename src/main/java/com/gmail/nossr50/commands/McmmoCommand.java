@@ -80,10 +80,6 @@ public class McmmoCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.DARK_AQUA + " /mmoedit " + LocaleLoader.getString("Commands.mmoedit"));
         }
 
-        if (Permissions.adminChat(sender)) {
-            sender.sendMessage(ChatColor.DARK_AQUA + " /adminchat " + LocaleLoader.getString("Commands.AdminToggle"));
-        }
-
         if (Permissions.mcgod(sender)) {
             sender.sendMessage(ChatColor.DARK_AQUA + " /mcgod " + LocaleLoader.getString("Commands.mcgod"));
         }

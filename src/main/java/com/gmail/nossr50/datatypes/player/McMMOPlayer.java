@@ -71,7 +71,6 @@ public class McMMOPlayer {
     private PartyTeleportRecord ptpRecord;
 
     private boolean partyChatMode;
-    private boolean adminChatMode;
     private boolean displaySkillNotifications = true;
 
     private boolean abilityUse = true;
@@ -607,9 +606,6 @@ public class McMMOPlayer {
 
     public boolean isChatEnabled(ChatMode mode) {
         switch (mode) {
-            case ADMIN:
-                return adminChatMode;
-
             case PARTY:
                 return partyChatMode;
 
@@ -620,10 +616,6 @@ public class McMMOPlayer {
 
     public void disableChat(ChatMode mode) {
         switch (mode) {
-            case ADMIN:
-                adminChatMode = false;
-                return;
-
             case PARTY:
                 partyChatMode = false;
                 return;
@@ -635,14 +627,8 @@ public class McMMOPlayer {
 
     public void enableChat(ChatMode mode) {
         switch (mode) {
-            case ADMIN:
-                adminChatMode = true;
-                partyChatMode = false;
-                return;
-
             case PARTY:
                 partyChatMode = true;
-                adminChatMode = false;
                 return;
 
             default:
@@ -653,14 +639,8 @@ public class McMMOPlayer {
 
     public void toggleChat(ChatMode mode) {
         switch (mode) {
-            case ADMIN:
-                adminChatMode = !adminChatMode;
-                partyChatMode = !adminChatMode && partyChatMode;
-                return;
-
             case PARTY:
                 partyChatMode = !partyChatMode;
-                adminChatMode = !partyChatMode && adminChatMode;
                 return;
 
             default:

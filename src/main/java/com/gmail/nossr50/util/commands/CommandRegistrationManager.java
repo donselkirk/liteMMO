@@ -1,7 +1,6 @@
 package com.gmail.nossr50.util.commands;
 
 import com.gmail.nossr50.commands.*;
-import com.gmail.nossr50.commands.chat.AdminChatCommand;
 import com.gmail.nossr50.commands.chat.PartyChatCommand;
 import com.gmail.nossr50.commands.database.McpurgeCommand;
 import com.gmail.nossr50.commands.database.McremoveCommand;
@@ -279,17 +278,6 @@ public final class CommandRegistrationManager {
         command.setExecutor(new McconvertCommand());
     }
 
-    private static void registerAdminChatCommand() {
-        PluginCommand command = mcMMO.p.getCommand("adminchat");
-        command.setDescription(LocaleLoader.getString("Commands.Description.adminchat"));
-        command.setPermission("mcmmo.chat.adminchat");
-        command.setPermissionMessage(permissionsMessage);
-        command.setUsage(LocaleLoader.getString("Commands.Usage.0", "adminchat"));
-        command.setUsage(command.getUsage() + "\n" + LocaleLoader.getString("Commands.Usage.1", "adminchat", "<on|off>"));
-        command.setUsage(command.getUsage() + "\n" + LocaleLoader.getString("Commands.Usage.1", "adminchat", "<" + LocaleLoader.getString("Commands.Usage.Message") + ">"));
-        command.setExecutor(new AdminChatCommand());
-    }
-
     private static void registerPartyChatCommand() {
         PluginCommand command = mcMMO.p.getCommand("partychat");
         command.setDescription(LocaleLoader.getString("Commands.Description.partychat"));
@@ -393,7 +381,6 @@ public final class CommandRegistrationManager {
 
         // Chat Commands
         registerPartyChatCommand();
-        registerAdminChatCommand();
 
         // Database Commands
         registerMcpurgeCommand();

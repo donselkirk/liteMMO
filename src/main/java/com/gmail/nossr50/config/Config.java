@@ -248,9 +248,6 @@ public class Config extends AutoUpdateConfigLoader {
     public boolean getPartyDisplayNames() { return config.getBoolean("Commands.partychat.Use_Display_Names", true); }
     public String getPartyChatPrefixAlly() { return config.getString("Commands.partychat.Chat_Prefix_Format_Ally", "[[GREEN]](A)[[RESET]]"); }
 
-    public String getAdminChatPrefix() { return config.getString("Commands.adminchat.Chat_Prefix_Format", "[[AQUA]][[[WHITE]]{0}[[AQUA]]]"); }
-    public boolean getAdminDisplayNames() { return config.getBoolean("Commands.adminchat.Use_Display_Names", true); }
-
     public boolean getMatchOfflinePlayers() { return config.getBoolean("Commands.Generic.Match_OfflinePlayers", false); }
     public long getDatabasePlayerCooldown() { return config.getLong("Commands.Database.Player_Cooldown", 1750); }
 

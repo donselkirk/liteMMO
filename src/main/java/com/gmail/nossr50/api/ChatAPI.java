@@ -42,33 +42,6 @@ public final class ChatAPI {
     }
 
     /**
-     * Send a message to administrators
-     * </br>
-     * This function is designed for API usage.
-     *
-     * @param plugin The plugin sending the message
-     * @param sender The name of the sender
-     * @param displayName The display name of the sender
-     * @param message The message to send
-     */
-    public static void sendAdminChat(Plugin plugin, String sender, String displayName, String message) {
-        ChatManagerFactory.getChatManager(plugin, ChatMode.ADMIN).handleChat(sender, displayName, message);
-    }
-
-    /**
-     * Send a message to administrators
-     * </br>
-     * This function is designed for API usage.
-     *
-     * @param plugin The plugin sending the message
-     * @param sender The name of the sender to display in the chat
-     * @param message The message to send
-     */
-    public static void sendAdminChat(Plugin plugin, String sender, String message) {
-        ChatManagerFactory.getChatManager(plugin, ChatMode.ADMIN).handleChat(sender, message);
-    }
-
-    /**
      * Check if a player is currently talking in party chat.
      *
      * @param player The player to check
@@ -89,26 +62,6 @@ public final class ChatAPI {
     }
 
     /**
-     * Check if a player is currently talking in admin chat.
-     *
-     * @param player The player to check
-     * @return true if the player is using admin chat, false otherwise
-     */
-    public static boolean isUsingAdminChat(Player player) {
-        return UserManager.getPlayer(player).isChatEnabled(ChatMode.ADMIN);
-    }
-
-    /**
-     * Check if a player is currently talking in admin chat.
-     *
-     * @param playerName The name of the player to check
-     * @return true if the player is using admin chat, false otherwise
-     */
-    public static boolean isUsingAdminChat(String playerName) {
-        return UserManager.getPlayer(playerName).isChatEnabled(ChatMode.ADMIN);
-    }
-
-    /**
      * Toggle the party chat mode of a player.
      *
      * @param player The player to toggle party chat on.
@@ -124,24 +77,6 @@ public final class ChatAPI {
      */
     public static void togglePartyChat(String playerName) {
         UserManager.getPlayer(playerName).toggleChat(ChatMode.PARTY);
-    }
-
-    /**
-     * Toggle the admin chat mode of a player.
-     *
-     * @param player The player to toggle admin chat on.
-     */
-    public static void toggleAdminChat(Player player) {
-        UserManager.getPlayer(player).toggleChat(ChatMode.ADMIN);
-    }
-
-    /**
-     * Toggle the admin chat mode of a player.
-     *
-     * @param playerName The name of the player to toggle party chat on.
-     */
-    public static void toggleAdminChat(String playerName) {
-        UserManager.getPlayer(playerName).toggleChat(ChatMode.ADMIN);
     }
 
     private static ChatManager getPartyChatManager(Plugin plugin, String party) {

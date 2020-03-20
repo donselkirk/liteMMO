@@ -35,8 +35,7 @@ public final class Permissions {
 
     /* CHAT */
     public static boolean partyChat(Permissible permissible) { return permissible.hasPermission("mcmmo.chat.partychat"); }
-    public static boolean adminChat(Permissible permissible) { return permissible.hasPermission("mcmmo.chat.adminchat"); }
-
+ 
     /*
      * COMMANDS
      */

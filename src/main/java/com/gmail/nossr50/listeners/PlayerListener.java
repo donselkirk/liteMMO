@@ -656,9 +656,6 @@ public class PlayerListener implements Listener {
             chatManager = ChatManagerFactory.getChatManager(plugin, ChatMode.PARTY);
             ((PartyChatManager) chatManager).setParty(party);
         }
-        else if (mcMMOPlayer.isChatEnabled(ChatMode.ADMIN)) {
-            chatManager = ChatManagerFactory.getChatManager(plugin, ChatMode.ADMIN);
-        }
 
         if (chatManager != null) {
             chatManager.handleChat(player, event.getMessage(), event.isAsynchronous());

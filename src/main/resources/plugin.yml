@@ -131,10 +131,6 @@ commands:
     salvage:
         description: Detailed mcMMO skill info
         permission: mcmmo.commands.salvage
-    adminchat:
-        aliases: [ac, a]
-        description: Toggle Admin chat or send admin chat messages
-        permission: mcmmo.chat.adminchat
     mcpurge:
         description: Purge users with 0 powerlevel and/or who haven't connected in several months from the server DB.
         permission: mcmmo.commands.mcpurge
@@ -701,16 +697,13 @@ permissions:
         description: Allows user to bypass finding traps when Fishing
     mcmmo.chat.*:
         default: false
-        description: Implies all mcmmo.chat permissions. (Warning, contains adminchat)
+        description: Implies all mcmmo.chat permissions.
         children:
             mcmmo.chat.all: true
     mcmmo.chat.all:
-        description: Implies all mcmmo.chat permissions. (Warning, contains adminchat)
+        description: Implies all mcmmo.chat permissions.
         children:
-            mcmmo.chat.adminchat: true 
             mcmmo.chat.partychat: true 
-    mcmmo.chat.adminchat:
-        description: Allows participation in admin chat
     mcmmo.chat.partychat:
         description: Allows participation in party chat
     mcmmo.motd:
@@ -1235,7 +1228,6 @@ permissions:
         default: op
         description: mcmmo permissions that default to op
         children:
-            mcmmo.chat.adminchat: true
             mcmmo.commands.defaultsop: true
             mcmmo.item.all: true
             mcmmo.tools.all: true
