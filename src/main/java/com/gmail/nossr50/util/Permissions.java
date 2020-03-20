@@ -29,7 +29,6 @@ public final class Permissions {
     public static boolean showversion(Permissible permissible) { return permissible.hasPermission("mcmmo.showversion"); }
 
     /* BYPASS */
-    public static boolean hardcoreBypass(Permissible permissible) { return permissible.hasPermission("mcmmo.bypass.hardcoremode"); }
     public static boolean arcaneBypass(Permissible permissible) { return permissible.hasPermission("mcmmo.bypass.arcanebypass"); }
     public static boolean krakenBypass(Permissible permissible) { return permissible.hasPermission("mcmmo.bypass.kraken"); }
     public static boolean trapsBypass(Permissible permissible) { return permissible.hasPermission("mcmmo.bypass.fishingtraps"); }
@@ -47,9 +46,6 @@ public final class Permissions {
 
     public static boolean addxp(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.addxp"); }
     public static boolean addxpOthers(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.addxp.others"); }
-
-    public static boolean hardcoreModify(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.hardcore.modify"); }
-    public static boolean hardcoreToggle(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.hardcore.toggle"); }
 
     public static boolean inspect(Permissible permissible) { return (permissible.hasPermission("mcmmo.commands.inspect")); }
     public static boolean inspectFar(Permissible permissible) { return (permissible.hasPermission("mcmmo.commands.inspect.far")); }
@@ -90,9 +86,6 @@ public final class Permissions {
 
     public static boolean xprateSet(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.xprate.set"); }
     public static boolean xprateReset(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.xprate.reset"); }
-
-    public static boolean vampirismModify(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.vampirism.modify"); }
-    public static boolean vampirismToggle(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.vampirism.toggle"); }
 
     public static boolean mcpurge(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.mcpurge"); }
     public static boolean mcremove(Permissible permissible) { return permissible.hasPermission("mcmmo.commands.mcremove"); }

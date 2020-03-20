@@ -18,7 +18,6 @@ public final class Motd {
 
     public static void displayAll(Player player) {
         displayVersion(player, pluginDescription.getVersion());
-        displayHardcoreSettings(player);
         displayXpPerks(player);
         displayCooldownPerks(player);
         displayActivationPerks(player);
@@ -35,46 +34,6 @@ public final class Motd {
     public static void displayVersion(Player player, String version) {
         if (Permissions.showversion(player)) {
             player.sendMessage(LocaleLoader.getString("MOTD.Version", version));
-        }
-    }
-
-    /**
-     * Display Hardcore Mode settings.
-     *
-     * @param player Target player
-     */
-    public static void displayHardcoreSettings(Player player) {
-        boolean deathStatLossEnabled = HardcoreManager.isStatLossEnabled();
-        boolean vampirismEnabled = HardcoreManager.isVampirismEnabled();
-
-        if (!deathStatLossEnabled && !vampirismEnabled) {
-            return;
-        }
-
-        String statLossInfo = "";
-        String vampirismInfo = "";
-        String seperator = "";
-
-        if (deathStatLossEnabled) {
-            statLossInfo = LocaleLoader.getString("Hardcore.DeathStatLoss.Name");
-        }
-
-        if (vampirismEnabled) {
-            vampirismInfo = LocaleLoader.getString("Hardcore.Vampirism.Name");
-        }
-
-        if (deathStatLossEnabled && vampirismEnabled) {
-            seperator = " & ";
-        }
-
-        player.sendMessage(LocaleLoader.getString("MOTD.Hardcore.Enabled", statLossInfo + seperator + vampirismInfo));
-
-        if (deathStatLossEnabled) {
-            player.sendMessage(LocaleLoader.getString("MOTD.Hardcore.DeathStatLoss.Stats", Config.getInstance().getHardcoreDeathStatPenaltyPercentage()));
-        }
-
-        if (vampirismEnabled) {
-            player.sendMessage(LocaleLoader.getString("MOTD.Hardcore.Vampirism.Stats", Config.getInstance().getHardcoreVampirismStatLeechPercentage()));
         }
     }
 

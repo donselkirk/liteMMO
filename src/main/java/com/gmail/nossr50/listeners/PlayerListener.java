@@ -91,48 +91,6 @@ public class PlayerListener implements Listener {
     }
 
     /**
-     * Monitor PlayerDeathEvents.
-     * <p>
-     * These events are monitored for the purpose of dealing the penalties
-     * associated with hardcore and vampirism modes. If neither of these
-     * modes are enabled, or if the player who died has hardcore bypass
-     * permissions, this handler does nothing.
-     *
-     * @param event The event to monitor
-     */
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
-    public void onPlayerDeathMonitor(PlayerDeathEvent event) {
-        boolean statLossEnabled = HardcoreManager.isStatLossEnabled();
-        boolean vampirismEnabled = HardcoreManager.isVampirismEnabled();
-
-        if (!statLossEnabled && !vampirismEnabled) {
-            return;
-        }
-
-        Player killedPlayer = event.getEntity();
-
-        if (!killedPlayer.hasMetadata(mcMMO.playerDataKey) || Permissions.hardcoreBypass(killedPlayer)) {
-            return;
-        }
-
-        Player killer = killedPlayer.getKiller();
-
-        if (statLossEnabled || (killer != null && vampirismEnabled)) {
-            if (EventUtils.callPreDeathPenaltyEvent(killedPlayer).isCancelled()) {
-                return;
-            }
-
-            if (killer != null && vampirismEnabled) {
-                HardcoreManager.invokeVampirism(killer, killedPlayer);
-            }
-
-            if (statLossEnabled) {
-                HardcoreManager.invokeStatPenalty(killedPlayer);
-            }
-        }
-    }
-
-    /**
      * Monitor PlayerChangedWorldEvents.
      * <p>
      * These events are monitored for the purpose of removing god mode or

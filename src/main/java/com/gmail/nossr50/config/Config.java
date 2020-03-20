@@ -106,15 +106,6 @@ public class Config extends AutoUpdateConfigLoader {
             reason.add("Database_Purging.Old_User_Cutoff should be greater than 0 or -1!");
         }
 
-        /* Hardcore Mode */
-        if (getHardcoreDeathStatPenaltyPercentage() < 0.01 || getHardcoreDeathStatPenaltyPercentage() > 100) {
-            reason.add("Hardcore.Death_Stat_Loss.Penalty_Percentage only accepts values from 0.01 to 100!");
-        }
-
-        if (getHardcoreVampirismStatLeechPercentage() < 0.01 || getHardcoreVampirismStatLeechPercentage() > 100) {
-            reason.add("Hardcore.Vampirism.Leech_Percentage only accepts values from 0.01 to 100!");
-        }
-
         /* Items */
         if (getChimaeraUseCost() < 1 || getChimaeraUseCost() > 64) {
             reason.add("Items.Chimaera_Wing.Use_Cost only accepts values from 1 to 64!");
@@ -348,23 +339,6 @@ public class Config extends AutoUpdateConfigLoader {
         }
         return str;
     }
-
-    /* Hardcore Mode */
-    public boolean getHardcoreStatLossEnabled(SkillType skillType) { return config.getBoolean("Hardcore.Death_Stat_Loss.Enabled." + StringUtils.getCapitalized(skillType.toString()), false); }
-    public void setHardcoreStatLossEnabled(SkillType skillType, boolean enabled) { config.set("Hardcore.Death_Stat_Loss.Enabled." + StringUtils.getCapitalized(skillType.toString()), enabled); }
-
-    public double getHardcoreDeathStatPenaltyPercentage() { return config.getDouble("Hardcore.Death_Stat_Loss.Penalty_Percentage", 75.0D); }
-    public void setHardcoreDeathStatPenaltyPercentage(double value) { config.set("Hardcore.Death_Stat_Loss.Penalty_Percentage", value); }
-
-    public int getHardcoreDeathStatPenaltyLevelThreshold() { return config.getInt("Hardcore.Death_Stat_Loss.Level_Threshold", 0); }
-
-    public boolean getHardcoreVampirismEnabled(SkillType skillType) { return config.getBoolean("Hardcore.Vampirism.Enabled." + StringUtils.getCapitalized(skillType.toString()), false); }
-    public void setHardcoreVampirismEnabled(SkillType skillType, boolean enabled) { config.set("Hardcore.Vampirism.Enabled." + StringUtils.getCapitalized(skillType.toString()), enabled); }
-
-    public double getHardcoreVampirismStatLeechPercentage() { return config.getDouble("Hardcore.Vampirism.Leech_Percentage", 5.0D); }
-    public void setHardcoreVampirismStatLeechPercentage(double value) { config.set("Hardcore.Vampirism.Leech_Percentage", value); }
-
-    public int getHardcoreVampirismLevelThreshold() { return config.getInt("Hardcore.Vampirism.Level_Threshold", 0); }
 
     /* SMP Mods */
     public boolean getToolModsEnabled() { return config.getBoolean("Mods.Tool_Mods_Enabled", false); }

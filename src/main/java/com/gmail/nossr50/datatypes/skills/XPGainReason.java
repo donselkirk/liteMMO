@@ -3,7 +3,6 @@ package com.gmail.nossr50.datatypes.skills;
 public enum XPGainReason {
     PVP,
     PVE,
-    VAMPIRISM,
     SHARED_PVP,
     SHARED_PVE,
     COMMAND,

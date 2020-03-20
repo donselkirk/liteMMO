@@ -158,46 +158,6 @@ MySQL:
         SSL: true
 
 #
-#  Settings for Hardcore mode
-#  Players will not lose stats when their level is below the Level_Threshold
-###
-Hardcore:
-    Death_Stat_Loss:
-        Penalty_Percentage: 75.0
-        Level_Threshold: 0
-        Enabled:
-            Acrobatics: false
-            Alchemy: false
-            Archery: false
-            Axes: false
-            Excavation: false
-            Fishing: false
-            Herbalism: false
-            Mining: false
-            Repair: false
-            Swords: false
-            Taming: false
-            Unarmed: false
-            Woodcutting: false
-    Vampirism:
-        Leech_Percentage: 5.0
-        Level_Threshold: 0
-        Enabled:
-            Acrobatics: false
-            Alchemy: false
-            Archery: false
-            Axes: false
-            Excavation: false
-            Fishing: false
-            Herbalism: false
-            Mining: false
-            Repair: false
-            Swords: false
-            Taming: false
-            Unarmed: false
-            Woodcutting: false
-
-#
 #  Settings for SMP Mods
 ###
 Mods:
